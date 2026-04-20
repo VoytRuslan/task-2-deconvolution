@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import argparse
-import os
 from pathlib import Path
 
 import cv2
@@ -71,23 +70,11 @@ def choose_parameters(noise_level: float) -> tuple[float, int]:
     return lambda_tv, 100
 
 
-def apply_parameter_overrides(lambda_tv: float, iterations: int) -> tuple[float, int]:
-    lambda_override = os.environ.get("SOLUTION_LAMBDA_TV")
-    iterations_override = os.environ.get("SOLUTION_ITERATIONS")
-
-    if lambda_override is not None:
-        lambda_tv = float(lambda_override)
-    if iterations_override is not None:
-        iterations = int(iterations_override)
-    return lambda_tv, iterations
-
-
 def deconvolve_tv(blurred: np.ndarray, kernel: np.ndarray, noise_level: float) -> np.ndarray:
     kernel = normalize_kernel(kernel)
     kernel_flipped = kernel[::-1, ::-1]
 
     lambda_tv, iterations = choose_parameters(noise_level)
-    lambda_tv, iterations = apply_parameter_overrides(lambda_tv, iterations)
     tau = 1.2
     sigma = 0.05
     theta = 1.0
