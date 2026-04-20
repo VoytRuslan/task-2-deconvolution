@@ -1,0 +1,11 @@
+reference=task_testdata\reference.bmp
+kernel_type=motion
+size=19
+sigma=2.0
+radius=3.0
+angle=15.0
+length=9.0
+thickness=1.0
+noise_level=5.0
+seed=31
+blurred_vs_reference_psnr=26.5013

@@ -1,0 +1,11 @@
+reference=task_testdata\reference.bmp
+kernel_type=disk
+size=11
+sigma=2.0
+radius=2.5
+angle=0.0
+length=7.0
+thickness=1.0
+noise_level=6.0
+seed=21
+blurred_vs_reference_psnr=27.6630

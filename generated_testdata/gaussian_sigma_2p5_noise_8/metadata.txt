@@ -1,0 +1,11 @@
+reference=task_testdata\reference.bmp
+kernel_type=gaussian
+size=15
+sigma=2.5
+radius=3.0
+angle=0.0
+length=7.0
+thickness=1.0
+noise_level=8.0
+seed=12
+blurred_vs_reference_psnr=25.3467
